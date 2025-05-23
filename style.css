@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #85d8ce, #3a99d8);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: rgba(0, 0, 50, 0.85);
+  padding: 20px 40px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+header h1 {
+  font-weight: 600;
+  font-size: 2.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 6px #54d0ff;
+}
+
+nav {
+  margin-top: 12px;
+}
+
+nav a {
+  color: #a0eaff;
+  margin: 0 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffd400;
+}
+
+main {
+  flex: 1;
+  padding: 40px 10%;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+}
+
+section {
+  margin-bottom: 50px;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.3s; }
+section:nth-child(3) { animation-delay: 0.5s; }
+section:nth-child(4) { animation-delay: 0.7s; }
+
+h2 {
+  color: #eeff00;
+  font-weight: 600;
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #ff0000;
+  display: inline-block;
+  padding-bottom: 6px;
+  text-shadow: 0 0 6px #00d0ff88;
+}
+
+p {
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  max-width: 850px;
+}
+
+.img-container {
+  margin-top: 20px;
+  max-width: 50%;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.img-container img {
+  width: 100%;
+  display: block;
+  transition: transform 0.6s ease;
+  border-radius: 15px;
+}
+
+.img-container img:hover {
+  transform: scale(1.1) rotate(1.5deg);
+}
+
+ul.facilities {
+  list-style: none;
+  margin-top: 20px;
+  max-width: 600px;
+}
+
+ul.facilities li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  padding-left: 24px;
+  position: relative;
+  cursor: default;
+}
+
+ul.facilities li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #00ffdd;
+  font-weight: 700;
+}
+
+.pricing-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  max-width: 900px;
+}
+
+.card {
+  background: rgba(0, 255, 255, 0.15);
+  border-radius: 15px;
+  flex: 1 1 280px;
+  padding: 25px;
+  box-shadow: 0 0 25px #00fffaa0;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px #00fffaa0;
+}
+
+.card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #00b2b2;
+  text-align: center;
+}
+
+.price {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #00ffcc;
+  text-align: center;
+  text-shadow: 0 0 8px #00ffccaa;
+}
+
+.promo {
+  color: #ffd400;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 8px;
+}
+
+form {
+  max-width: 500px;
+  background: rgba(0,0,0,0.3);
+  padding: 28px 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00d9ffcc;
+}
+
+form label {
+  font-weight: 600;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 8px;
+  color: #a0f0ff;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 22px;
+  font-size: 1rem;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+form button {
+  background: #00d9ff;
+  color: #00334a;
+  font-weight: 700;
+  padding: 14px 0;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: bg 0.3s ease;
+}
+
+form button:hover {
+  background: #00b5e6;
+}
+
+footer {
+  background: rgba(0,0,50,0.85);
+  padding: 15px 5%;
+  text-align: center;
+  color: #55d7ff;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media(max-width: 850px){
+  main {
+    padding: 30px 5%;
+  }
+  .pricing-cards {
+    flex-direction: column;
+  }
+}

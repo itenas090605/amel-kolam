@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Promosi Kolam Renang AquaSplash</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Kolam Renang Amel</h1>
+    <nav>
+      <a href="#about">Tentang</a>
+      <a href="#facilities">Fasilitas</a>
+      <a href="#pricing">Harga & Promo</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>Tentang AquaSplash</h2>
+      <p>
+        AquaSplash adalah kolam renang modern di tengah kota yang menawarkan pengalaman berenang terbaik untuk keluarga dan semua usia. Dengan air yang jernih, fasilitas lengkap, dan suasana asri, kami siap membuat setiap kunjungan Anda menyenangkan dan segar!
+      </p>
+      <div class="img-container" aria-label="Gambar kolam renang AquaSplash">
+        <img src="bg.jpg" alt="Kolam renang modern AquaSplash dengan pemandangan cerah" />
+      </div>
+    </section>
+
+    <section id="facilities">
+      <h2>Fasilitas Kami</h2>
+      <ul class="facilities" aria-label="Daftar fasilitas kolam renang AquaSplash">
+        <li>Kolam dewasa dan anak dengan standar internasional</li>
+        <li>Area bermain air untuk anak-anak</li>
+        <li>Pengawasan lifeguard profesional 24 jam</li>
+        <li>Locker room dan shower bersih dan modern</li>
+        <li>Kafe dengan makanan dan minuman segar</li>
+        <li>Parkir luas dan zona hijau asri</li>
+      </ul>
+    </section>
+
+    <section id="pricing">
+      <h2>Harga & Promo Menarik</h2>
+      <div class="pricing-cards">
+        <div class="card" aria-label="Paket harian">
+          <h3>Paket Harian</h3>
+          <div class="price">Rp 50.000</div>
+          <div>Harga per orang</div>
+        </div>
+        <div class="card" aria-label="Paket bulanan">
+          <h3>Paket Bulanan</h3>
+          <div class="price">Rp 400.000</div>
+          <div>Hemat dan bebas berenang sebulan!</div>
+          <div class="promo">Promo: Gratis kaos AquaSplash</div>
+        </div>
+        <div class="card" aria-label="Paket keluarga">
+          <h3>Paket Keluarga</h3>
+          <div class="price">Rp 180.000</div>
+          <div>Untuk 4 orang, hemat 20%</div>
+          <div class="promo">Bonus snack dan minuman</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Hubungi Kami</h2>
+      <p>Isi form berikut untuk reservasi atau pertanyaan lebih lanjut:</p>
+      <form id="contactForm" aria-label="Form konktak kolam renang">
+        <label for="name">Nama Lengkap</label>
+        <input type="text" id="name" name="name" autocomplete="name" required aria-required="true" />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required aria-required="true" />
+
+        <label for="message">Pesan</label>
+        <textarea id="message" name="message" required aria-required="true"></textarea>
+
+        <button type="submit">Kirim Pesan</button>
+      </form>
+      <p id="formMessage" role="alert" aria-live="polite" style="margin-top:15px;"></p>
+    </section>
+  </main>
+
+  <footer>
+    &#169; 2024 AquaSplash Kolam Renang. All rights reserved.
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+
+      if (!name || !email || !message) {
+        formMessage.textContent = "Mohon lengkapi semua kolom.";
+        formMessage.style.color = "#ff5555";
+        return;
+      }
+
+      formMessage.style.color = "#00ffcc";
+      formMessage.textContent = "Terima kasih, pesan Anda telah terkirim! Kami akan menghubungi Anda segera.";
+      form.reset();
+    });
+  </script>
+</body>
+</html>
